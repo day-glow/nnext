@@ -1,0 +1,20 @@
+{
+  "name": "nnext",
+  "version": "1.0.0",
+  "description": "Randomly select the order or numbers for a group to go in!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/day-glow/nnext.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/day-glow/nnext/issues"
+  },
+  "homepage": "https://github.com/day-glow/nnext#readme"
+}
