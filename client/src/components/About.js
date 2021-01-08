@@ -2,7 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
 
-function About({ }) {
+function About({ show }) {
+  if (!show) return null;
+
   return (
     <View style={styles.container}>
 

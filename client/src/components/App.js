@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-nat
 import About from './About';
 
 const App = () => {
-  const [openAbout, setOpenAbout] = useState(false);
+  const [showAbout, setAbout] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -20,9 +20,12 @@ const App = () => {
       />
       <Button
         onPress={() => {
-          console.log("hey you pressed the about button")
+          setAbout(!showAbout);
         }}
-        title="about nnext"
+        title={showAbout ? "read about" : "about nnext"}
+      />
+      <About
+        show={showAbout}
       />
       <StatusBar style="auto" />
     </View>
