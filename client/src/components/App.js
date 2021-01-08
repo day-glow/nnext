@@ -10,6 +10,11 @@ const App = () => {
   const [showAbout, setAbout] = useState(false);
   const [showNewGameOptions, setNewGameOptions] = useState(false);
 
+  const [numPlayers, setNumPlayers] = useState(2);
+  const [outcomeType, setOutcomeType] = useState("all");
+
+
+
   return (
     <View style={styles.container}>
       <Header

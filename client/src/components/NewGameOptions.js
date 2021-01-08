@@ -16,7 +16,7 @@ function NewGameOptions({ show }) {
 
         <Text style={styles.section}>New Game Options</Text>
         <Text style={styles.sectionText}>
-          Customize your next game by selection the following fields:
+          Quickly customize your perfect nnext game
         </Text>
 
         <Text style={styles.section}>Number of Players</Text>
