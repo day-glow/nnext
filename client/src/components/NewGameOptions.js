@@ -7,6 +7,7 @@ function NewGameOptions({ show, updateNumPlayers }) {
 
   const [numberOfPlayers, setNumberOfPlayers] = useState(2);
   const [showInvalid, setInvalid] = useState(false);
+  const [outcomeTypeSelection, setOutcomeTypeSelection] = useState("all");
 
   useEffect(() => {
     //send game options to app level
@@ -48,15 +49,30 @@ function NewGameOptions({ show, updateNumPlayers }) {
         <Text style={styles.section}>TESTING INPUT: {numberOfPlayers}</Text>
 
         <Text style={styles.section}>Type of Outcome</Text>
-        <Text style={styles.sectionText}>
-          Single
-        </Text>
-        <Text style={styles.sectionText}>
-          One-by-One
-        </Text>
-        <Text style={styles.sectionText}>
-          All
-        </Text>
+        <Button
+          style={styles.outcomeTypeBtn}
+          onPress={() => {
+
+
+          }}
+          title="SINGLE"
+        />
+        <Button
+          style={styles.outcomeTypeBtn}
+          onPress={() => {
+
+
+          }}
+          title="ONE-BY-ONE"
+        />
+        <Button
+          style={styles.outcomeTypeBtn}
+          onPress={() => {
+
+
+          }}
+          title="ALL"
+        />
 
         <Text style={styles.section}>Advanced Settings (coming soon)</Text>
 
@@ -67,7 +83,7 @@ function NewGameOptions({ show, updateNumPlayers }) {
 
         }}
         title="START GAME"
-      />
+        />
         <StatusBar style="auto" />
       </View>
     </ScrollView>
@@ -94,6 +110,9 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   numPlayersSelection: {
+
+  },
+  outcomeTypeBtn: {
 
   },
   startGameBtn: {
