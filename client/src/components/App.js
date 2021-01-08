@@ -19,7 +19,8 @@ const App = () => {
       <Button
         style={styles.newGameBtn}
         onPress={() => {
-          console.log("hey you pressed the new game button")
+          setNewGameOptions(!showNewGameOptions);
+          setHeader(!showHeader);
         }}
         title="NEW GAME"
       />
@@ -34,6 +35,9 @@ const App = () => {
       />
       <About
         show={showAbout}
+      />
+      <NewGameOptions
+        show={showNewGameOptions}
       />
       <StatusBar style="auto" />
     </View>
