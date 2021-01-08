@@ -6,6 +6,7 @@ function NewGameOptions({ show, updateNumPlayers }) {
   if (!show) return null;
 
   const [numberOfPlayers, setNumberOfPlayers] = useState(2);
+  const [showInvalid, setInvalid] = useState(false);
 
   useEffect(() => {
     //send game options to app level
@@ -30,9 +31,20 @@ function NewGameOptions({ show, updateNumPlayers }) {
           style={styles.numPlayersSelection}
           placeholder="How many players in this game?"
           //check for invalid text, num, max, min
-          onChangeText={numberInput => setNumberOfPlayers(numberInput)}
+          onChangeText={numberInput => {
+            if (RegExp('^[0-9]$').test(numberInput)) {
+              setInvalid(false);
+              setNumberOfPlayers(numberInput);
+            } else if (numberInput === '') {
+              setInvalid(false);
+              setNumberOfPlayers(2);
+            } else {
+              setInvalid(true);
+            }
+          }}
           defaultValue={2}
         />
+        <Text style={styles.section}>{showInvalid ? "INVALID NUMBER (i.e. 1-100)" : null}</Text>
         <Text style={styles.section}>TESTING INPUT: {numberOfPlayers}</Text>
 
         <Text style={styles.section}>Type of Outcome</Text>
