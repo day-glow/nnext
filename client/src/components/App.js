@@ -4,25 +4,29 @@ import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-nat
 import About from './About';
 
 const App = () => {
-  const [openAbout, setOpenAbout] = useState(false);
+  const [showAbout, setAbout] = useState(false);
 
   return (
     <View style={styles.container}>
-      <TextInput>Name:</TextInput>
-      <Text>WELCOME TO</Text>
-      <Text>nnext</Text>
+      <Text style={styles.welcome}>WELCOME TO</Text>
+      <Text style={styles.header}>nnext</Text>
       <Text></Text>
       <Button
+        style={styles.newGameBtn}
         onPress={() => {
           console.log("hey you pressed the new game button")
         }}
         title="NEW GAME"
       />
       <Button
+        style={styles.aboutBtn}
         onPress={() => {
-          console.log("hey you pressed the about button")
+          setAbout(!showAbout);
         }}
-        title="about nnext"
+        title={showAbout ? "done reading about section" : "about nnext"}
+      />
+      <About
+        show={showAbout}
       />
       <StatusBar style="auto" />
     </View>
@@ -35,6 +39,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  welcome: {
+    fontSize: 50,
+  },
+  header: {
+    fontSize: 120,
+  },
+  newGameBtn: {
+    fontSize: 60,
+  },
+  aboutBtn: {
+    fontSize: 60,
   },
 });
 
