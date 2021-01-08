@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-nat
 import Header from './Header';
 import About from './About';
 import NewGameOptions from './NewGameOptions';
+import GameAll from './GameAll';
 
 const App = () => {
   const [showHeader, setHeader] = useState(true);
@@ -13,7 +14,9 @@ const App = () => {
   const [numPlayers, setNumPlayers] = useState(2);
   const [outcomeType, setOutcomeType] = useState("all");
 
-
+  function updateNumPlayers(num) {
+    setNumPlayers(num);
+  }
 
   return (
     <View style={styles.container}>
@@ -41,8 +44,10 @@ const App = () => {
       <About
         show={showAbout}
       />
+      <Text style={{fontWeight: 'bold'}}>TESTING INPUT: {numPlayers}</Text>
       <NewGameOptions
         show={showNewGameOptions}
+        updateNumPlayers={updateNumPlayers}
       />
       <StatusBar style="auto" />
     </View>

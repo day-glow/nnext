@@ -2,13 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
 
-function NewGameOptions({ show }) {
+function NewGameOptions({ show, updateNumPlayers }) {
   if (!show) return null;
+
+  const [numberOfPlayers, setNumberOfPlayers] = useState(2);
 
   useEffect(() => {
     //send game options to app level
+    updateNumPlayers(numberOfPlayers);
     //start game
-  })
+  }, [numberOfPlayers]);
 
   return (
     <ScrollView>
@@ -23,6 +26,14 @@ function NewGameOptions({ show }) {
         <Text style={styles.sectionText}>
           Drop down? 1-n
         </Text>
+        <TextInput
+          style={styles.numPlayersSelection}
+          placeholder="How many players in this game?"
+          //check for invalid text, num, max, min
+          onChangeText={numberInput => setNumberOfPlayers(numberInput)}
+          defaultValue={2}
+        />
+        <Text style={styles.section}>TESTING INPUT: {numberOfPlayers}</Text>
 
         <Text style={styles.section}>Type of Outcome</Text>
         <Text style={styles.sectionText}>
@@ -69,6 +80,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginTop: 4,
     marginBottom: 4,
+  },
+  numPlayersSelection: {
+
   },
   startGameBtn: {
     fontSize: 60,
