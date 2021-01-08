@@ -10,17 +10,42 @@ function About({ show }) {
       <View style={styles.container}>
 
         <Text style={styles.section}>About nnext</Text>
-        <Text>text why this game rocks and solves useful everyday needs</Text>
+        <Text style={styles.sectionText}>
+          Our teacher has a difficulty randomly selecting the next presenter. He'd ask "Alexa, pick a number between 1-n....Alexa..."
+        </Text>
+        <Text style={styles.sectionText}>
+          Alexa, would respond "I'm sorry I didn't quite catch that".
+        </Text>
+        <Text style={styles.sectionText}>
+          Back and forth, until he would basically give up.
+        </Text>
+        <Text style={styles.sectionText}>
+          Next, he tried volunteers...crickets.
+        </Text>
+        <Text style={styles.sectionText}>
+          Next, he would ask someone to pick a random number between 1-n. Next, we would have to shift our numbers as each person went.
+        </Text>
+        <Text style={styles.sectionText}>
+          Let's just say, this is how "nnext" was born.
+        </Text>
 
         <Text style={styles.section}>Introduction</Text>
-        <Text>Selecting inputs and outputs for your needs</Text>
+        <Text style={styles.sectionText}>
+          It's free and easy to get started, just walk through the nnext steps listed in "How To Play".
+        </Text>
+        <Text style={styles.sectionText}>
+          If you want to go back, select the left arrow, if you want to move on, select the right arrow. You can also select the info icon for more details.
+        </Text>
+        <Text style={styles.sectionText}>
+          Try your first game with something simple, and customize as you play more games.
+        </Text>
 
         <Text style={styles.section}>How To Play</Text>
-        <Text>Step 1</Text>
-        <Text>Step 2</Text>
-        <Text>Step 3</Text>
-
-        <Text style={styles.section}>Icons</Text>
+        <Text>Step 1: Start "New Game"</Text>
+        <Text>Step 2: Select the number of players</Text>
+        <Text>Step 3: Select the type of game </Text>
+        <Text>Step 4: Click "nnext" for each round</Text>
+        <Text>Step 5: Celebrate because you saved so much time!</Text>
 
         <StatusBar style="auto" />
       </View>
@@ -30,13 +55,23 @@ function About({ show }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    margin: 30,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   section: {
     fontWeight: 'bold',
+    marginTop: 30,
+    marginBottom: 10,
+    // textAlign: 'left',
+  },
+  sectionText: {
+    textAlign: 'left',
+    justifyContent: 'space-around',
+    marginTop: 4,
+    marginBottom: 4,
   },
 });
 
