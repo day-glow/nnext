@@ -1,16 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
+import Header from './Header';
 import About from './About';
+import NewGameOptions from './NewGameOptions';
 
 const App = () => {
+  const [showHeader, setHeader] = useState(true);
   const [showAbout, setAbout] = useState(false);
+  const [showNewGameOptions, setNewGameOptions] = useState(false);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>WELCOME TO</Text>
-      <Text style={styles.header}>nnext</Text>
-      <Text></Text>
+      <Header
+        show={showHeader}
+      />
+
       <Button
         style={styles.newGameBtn}
         onPress={() => {
@@ -21,7 +26,9 @@ const App = () => {
       <Button
         style={styles.aboutBtn}
         onPress={() => {
+          //simple toggle (need to set if conditions)
           setAbout(!showAbout);
+          setHeader(!showHeader);
         }}
         title={showAbout ? "done reading about section" : "about nnext"}
       />
@@ -39,12 +46,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  welcome: {
-    fontSize: 50,
-  },
-  header: {
-    fontSize: 120,
   },
   newGameBtn: {
     fontSize: 60,
