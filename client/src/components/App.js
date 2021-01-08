@@ -22,7 +22,7 @@ const App = () => {
         onPress={() => {
           setAbout(!showAbout);
         }}
-        title={showAbout ? "read about" : "about nnext"}
+        title={showAbout ? "done reading about section" : "about nnext"}
       />
       <About
         show={showAbout}

@@ -6,23 +6,25 @@ function About({ show }) {
   if (!show) return null;
 
   return (
-    <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.container}>
 
-      <Text>About nnext</Text>
-      <Text>text why this game rocks and solves useful everyday needs</Text>
+        <Text style={styles.section}>About nnext</Text>
+        <Text>text why this game rocks and solves useful everyday needs</Text>
 
-      <Text>Introduction</Text>
-      <Text>Selecting inputs and outputs for your needs</Text>
+        <Text style={styles.section}>Introduction</Text>
+        <Text>Selecting inputs and outputs for your needs</Text>
 
-      <Text>How To Play</Text>
-      <Text>Step 1</Text>
-      <Text>Step 2</Text>
-      <Text>Step 3</Text>
+        <Text style={styles.section}>How To Play</Text>
+        <Text>Step 1</Text>
+        <Text>Step 2</Text>
+        <Text>Step 3</Text>
 
-      <Text>Icons</Text>
+        <Text style={styles.section}>Icons</Text>
 
-      <StatusBar style="auto" />
-    </View>
+        <StatusBar style="auto" />
+      </View>
+    </ScrollView>
   );
 }
 
@@ -32,6 +34,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  section: {
+    fontWeight: 'bold',
   },
 });
 
