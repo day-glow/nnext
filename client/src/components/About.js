@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 30,
     marginBottom: 10,
-    // textAlign: 'left',
   },
   sectionText: {
     textAlign: 'left',
