@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
 
-function NewGameOptions({ show, updateNumPlayers }) {
+function NewGameOptions({ show, updateNumPlayers, changeOutcomeType }) {
   if (!show) return null;
 
   const [numberOfPlayers, setNumberOfPlayers] = useState(2);
@@ -14,6 +14,12 @@ function NewGameOptions({ show, updateNumPlayers }) {
     updateNumPlayers(numberOfPlayers);
     //start game
   }, [numberOfPlayers]);
+
+  useEffect(() => {
+    //send game options to app level
+    changeOutcomeType(outcomeTypeSelection);
+    //start game
+  }, [outcomeTypeSelection]);
 
   return (
     <ScrollView>
@@ -52,24 +58,21 @@ function NewGameOptions({ show, updateNumPlayers }) {
         <Button
           style={styles.outcomeTypeBtn}
           onPress={() => {
-
-
+            setOutcomeTypeSelection("single");
           }}
           title="SINGLE"
         />
         <Button
           style={styles.outcomeTypeBtn}
           onPress={() => {
-
-
+            setOutcomeTypeSelection("oneByOne");
           }}
           title="ONE-BY-ONE"
         />
         <Button
           style={styles.outcomeTypeBtn}
           onPress={() => {
-
-
+            setOutcomeTypeSelection("all");
           }}
           title="ALL"
         />

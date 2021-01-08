@@ -16,7 +16,11 @@ const App = () => {
 
   function updateNumPlayers(num) {
     setNumPlayers(num);
-  }
+  };
+
+  function changeOutcomeType(type) {
+    setOutcomeType(type);
+  };
 
   return (
     <View style={styles.container}>
@@ -44,10 +48,11 @@ const App = () => {
       <About
         show={showAbout}
       />
-      <Text style={{fontWeight: 'bold'}}>TESTING INPUT: {numPlayers}</Text>
+      <Text style={{fontWeight: 'bold'}}>TESTING INPUT: {outcomeType}</Text>
       <NewGameOptions
         show={showNewGameOptions}
         updateNumPlayers={updateNumPlayers}
+        changeOutcomeType={changeOutcomeType}
       />
       <StatusBar style="auto" />
     </View>
