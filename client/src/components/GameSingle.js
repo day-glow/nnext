@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
 
-function GameAll({ show, numPlayers }) {
+function GameSingle({ show, numPlayers }) {
   if (!show) return null;
 
   //const [playersGrid, setPlayersGrid] = useState(null);
@@ -24,9 +24,16 @@ function GameAll({ show, numPlayers }) {
   return (
     <View style={styles.container}>
       <Text style={styles.outcomeType}>Party Mode: ALL</Text>
-      <Text style={styles.numberOfPlayers}>Total number of players this round: {numPlayers}</Text>
+      <Text style={styles.numberOfPlayers}>show num of players {numPlayers}</Text>
 
-      {playersGrid}
+      <View style={styles.row}>
+        <View style={styles.playerBox}/>
+        <View style={styles.playerBox}/>
+        <View style={styles.playerBox}/>
+      </View>
+
+        {playersGrid}
+
 
       <Button
         style={styles.nnextBtn}
@@ -77,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GameAll;
+export default GameSingle;
