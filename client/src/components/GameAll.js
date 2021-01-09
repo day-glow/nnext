@@ -2,13 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
 
-function GameAll({ show }) {
+function GameAll({ show, numPlayers }) {
   if (!show) return null;
+
+  //const [playersGrid, setPlayersGrid] = useState(null);
+  //1-n for loop, create each player box
+  let playersGrid = new Array(numPlayers).fill(null);
+
+  if (numPlayers > 0) {
+    for (let i = 0; i < numPlayers; i++) {
+      playersGrid[i] = (
+        <View style={styles.playerBox}>
+          <Text style={styles.players}>
+            {i + 1}
+          </Text>
+        </View>
+      );
+    };
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.outcomeType}>Party Mode: ALL</Text>
-      <Text style={styles.numberOfPlayers}>show num of players</Text>
+      <Text style={styles.numberOfPlayers}>show num of players {numPlayers}</Text>
 
       <View style={styles.row}>
         <View style={styles.playerBox}/>
@@ -17,18 +33,8 @@ function GameAll({ show }) {
       </View>
 
       <View style={styles.row}>
-        <View style={styles.playerBox}/>
-        <View style={styles.playerBox}/>
-        <View style={styles.playerBox}/>
+        {playersGrid}
       </View>
-
-      <View style={styles.row}>
-        <View style={styles.playerBox}/>
-        <View style={styles.playerBox}/>
-        <View style={styles.playerBox}/>
-      </View>
-
-
 
       <Button
         style={styles.nnextBtn}
@@ -70,7 +76,9 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   players: {
-    fontSize: 40,
+    fontSize: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   nnextBtn: {
     fontSize: 120,

@@ -2,12 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
 
-function NewGameOptions({ show, updateNumPlayers, changeOutcomeType }) {
+function NewGameOptions({ show, updateNumPlayers, changeOutcomeType, setStart }) {
   if (!show) return null;
 
   const [numberOfPlayers, setNumberOfPlayers] = useState(2);
   const [showInvalid, setInvalid] = useState(false);
-  const [outcomeTypeSelection, setOutcomeTypeSelection] = useState("all");
+  const [outcomeTypeSelection, setOutcomeTypeSelection] = useState(null);
 
   useEffect(() => {
     //send game options to app level
@@ -83,7 +83,7 @@ function NewGameOptions({ show, updateNumPlayers, changeOutcomeType }) {
         style={styles.startGameBtn}
         onPress={() => {
           //send useEffect back to App, toggle pages to show game
-
+          setStart(true);
         }}
         title="START GAME"
         />

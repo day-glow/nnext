@@ -13,7 +13,8 @@ const App = () => {
   const [showGameAll, setGameAll] = useState(false);
 
   const [numPlayers, setNumPlayers] = useState(2);
-  const [outcomeType, setOutcomeType] = useState("all");
+  const [outcomeType, setOutcomeType] = useState(null);
+  const [start, setStart] = useState(false);
 
   function updateNumPlayers(num) {
     setNumPlayers(num);
@@ -26,13 +27,13 @@ const App = () => {
   useEffect(() => {
     //show game page if selection is on
     //if game type matches and "start game" is selected
-    if (outcomeType === "all") {
+    if (start === true && outcomeType === "all" && numPlayers > 0) {
       setGameAll(true);
       setHeader(false);
       setAbout(false);
       setNewGameOptions(false);
     }
-  }, [outcomeType]);
+  }, [start]);
 
   return (
     <View style={styles.container}>
@@ -60,16 +61,17 @@ const App = () => {
       <About
         show={showAbout}
       />
-      <Text style={{fontWeight: 'bold'}}>TESTING INPUT: {outcomeType}</Text>
+      <Text style={{fontWeight: 'bold'}}>TESTING INPUT: {start}</Text>
       <NewGameOptions
         show={showNewGameOptions}
         updateNumPlayers={updateNumPlayers}
         changeOutcomeType={changeOutcomeType}
+        setStart={setStart}
       />
 
       <GameAll
-        style={styles.game}
         show={showGameAll}
+        numPlayers={numPlayers}
       />
       <StatusBar style="auto" />
     </View>
