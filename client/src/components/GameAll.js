@@ -5,7 +5,7 @@ import { Button, StyleSheet, Text, View, ScrollView, TextInput } from 'react-nat
 function GameAll({ show, numPlayers }) {
   if (!show) return null;
 
-  //const [playersGrid, setPlayersGrid] = useState(null);
+  //const [playersGrid, setPlayersGrid] = useState();
   //1-n for loop, create each player box
   let playersGrid = new Array(numPlayers).fill(null);
 
@@ -21,6 +21,22 @@ function GameAll({ show, numPlayers }) {
     };
   };
 
+  // function shuffleAll(playersGrid) {
+  //   let newPos;
+  //   let temp;
+  //   for (let i = playersGrid.length - 1; i < 0; i--) {
+  //     newPos = Math.floor((Math.random() * (i + 1)));
+  //     temp = playersGrid[i];
+  //     playersGrid[i] = playersGrid[newPos];
+  //     playersGrid[newPos] = temp;
+  //   }
+  //   setPlayersGrid(playersGrid);
+  // };
+
+  // useEffect(() => {
+  //   //if playersGrid changes order, need the numbers to rerender
+  // }, [playersGrid])
+
   return (
     <View style={styles.container}>
       <Text style={styles.outcomeType}>Party Mode: ALL</Text>
@@ -31,7 +47,9 @@ function GameAll({ show, numPlayers }) {
       <Button
         style={styles.nnextBtn}
         onPress={() => {
-
+          //randomize order
+          //invoke function to change order
+          //shuffleAll(playersGrid);
         }}
         title={"nnext"}
       />
