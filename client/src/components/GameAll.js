@@ -7,8 +7,17 @@ function GameAll({ show }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.outcomeType}>Party Mode</Text>
-      <Text style={styles.nnextBtn}>nnext</Text>
+      <Text style={styles.outcomeType}>Party Mode: ALL</Text>
+      <Text style={styles.numberOfPlayers}>show num of players</Text>
+
+      <Button
+        style={styles.nnextBtn}
+        onPress={() => {
+
+        }}
+        title={"nnext"}
+      />
+
       <StatusBar style="auto" />
     </View>
   );
@@ -23,6 +32,9 @@ const styles = StyleSheet.create({
   },
   outcomeType: {
     fontSize: 50,
+  },
+  players: {
+    fontSize: 40,
   },
   nnextBtn: {
     fontSize: 120,
