@@ -15,8 +15,8 @@ I love coding, spreading positivity and hearing feedback! Let's connect.
   <img src="https://img.shields.io/badge/EMAIL-jacki.yanamura%40gmail.com-1152ba?style=for-the-badge"/>
 </a>
 
-# MVP
-iOS Mobile app generates a random order for who goes nnext [git.io/JqhuB]
+## nnext Summary
+iOS Mobile app generates a random order for who goes nnext
 * Developed a React Native app to assist teachers, meeting leaders and gamers by randomly selecting player’s order with customizable inputs and outputs
 * Improved product usability by leveraging Flex Box for mobile navigation and UI design
 * Developed test plan and executed tests in parallel non-production and production environments using  iOS Simulator
@@ -27,18 +27,31 @@ Note: nnext is currently in development. Here is a sneak peek to what is to come
 ![](./img/mHUB_2.png)
 
 ## Documentation
-1. [Project Summary](#MVP)
-1. [Usage](#Using-Motivation-HUB)
+1. [Project Summary](#nnext-Summary)
+1. [About](#Background-Story)
+1. [Usage](#Using-nnext)
 1. [Design](#Whiteboarding-Database)
 1. [Technologies](#Technologies)
 1. [Related Projects](#Related-Projects)
 
-## Using Motivation HUB
-Each section is dedicated to quotes, songs, videos or social feeds. Users can like a content piece and save them to their likes to revisit at a later time.
+## Background Story
+Our teacher has a difficulty randomly selecting the next presenter. He'd ask "Alexa, pick a number between 1-n....Alexa...
+Alexa, would respond "I'm sorry I didn't quite catch that".
+Back and forth, until he would basically give up.
+Next, he tried volunteers...crickets.
+Next, he would ask someone to pick a random number between 1-n. Next, we would have to shift our numbers as each person went.
+Let's just say, this is how "nnext" was born.
 
-Click the right arrow button to see next piece of content.
+## Using nnext
+How to play nnext:
+1. Start "New Game"
+2. Select the number of players
+3. Select the type of game
+4. Click "nnext" for each round
+5. Celebrate because you saved so much time!
 
-Click on the content to link to the original content source.
+Check out the instructions page in the app:
+
 
 ## Whiteboarding Database
 ![](./img/mHUB_whiteboarding.jpg)
