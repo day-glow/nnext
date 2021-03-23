@@ -1,5 +1,5 @@
 # nnext
-Randomly select the order or numbers for a group to go in
+The iOS Mobile app which generates a random order for who goes nnext!
 
 <a href="https://www.github.com/day-glow" target="_blank">
   <img align='right' src="https://media.giphy.com/media/bcKmIWkUMCjVm/giphy.gif" width='200"'/>
