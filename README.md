@@ -59,7 +59,7 @@ How to play nnext:
 Check out the instructions page in the app:
 
 
-## Whiteboarding Database
+## Whiteboarding Storyboard
 ![](./nnext_whiteboarding.jpg)
 
 ## Technologies
