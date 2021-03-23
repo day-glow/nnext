@@ -60,7 +60,7 @@ Check out the instructions page in the app:
 
 
 ## Whiteboarding Database
-![](./img/mHUB_whiteboarding.jpg)
+![](./nnext_whiteboarding.jpg)
 
 ## Technologies
 * React Native
